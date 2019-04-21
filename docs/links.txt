@@ -1,4 +1,6 @@
 https://github.com/leanderme/sytora
+	|_ https://github.com/Aniruddha-Tapas/Predicting-Diseases-From-Symptoms
+	|_ https://github.com/sekharvth/symptom-disease
 https://github.com/deshanadesai/Symptom-X-
 https://www.biostars.org/p/14747/
 http://people.dbmi.columbia.edu/~friedma/Projects/DiseaseSymptomKB/index.html
