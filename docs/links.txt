@@ -6,3 +6,4 @@ https://www.biostars.org/p/14747/
 http://people.dbmi.columbia.edu/~friedma/Projects/DiseaseSymptomKB/index.html
 https://www.kaggle.com/data/55703
 https://proandroiddev.com/mobile-intelligence-tensorflow-lite-classification-on-android-c081278d9961
+https://archive.ics.uci.edu/ml/datasets/Heart+Disease
