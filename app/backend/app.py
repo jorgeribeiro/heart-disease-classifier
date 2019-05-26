@@ -12,19 +12,19 @@ app = Flask(__name__)
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
-    # get iris object from request
+    # get features object from request
     X = request.get_json()
-    X = [[''' set here features from heart disease dataset ''']]
+    X = [[float(X['cp'], float(X['thalach']), float(X['ca']), float(X['oldpeak']), float(X['sex']), float(X['trestbps']), float(X['age']))]]
 
     # read model
-    clf = joblib.load('../../model.pkl')
+    clf = joblib.load('model.pkl')
     probabilities = clf.predict_proba(X)
 
     return jsonify([{'name': 'Heart-disease', 'value': round(probabilities[0, 0] * 100, 2)},
-    				{'name': 'Not Heart-disease', 'value': round(probabilities[0, 1] * 100, 2)}])
+    				{'name': 'No Heart-disease', 'value': round(probabilities[0, 1] * 100, 2)}])
 
-    if __name__ == '__main__':
-    	# run web server
-	    app.run(host=HOST,
-	            debug=True,  # automatic reloading enabled
-				port=PORT)
+if __name__ == '__main__':
+	# run web server
+    app.run(host=HOST,
+            debug=True,  # automatic reloading enabled
+			port=PORT)
