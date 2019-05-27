@@ -5,7 +5,7 @@ import joblib
 
 # declare constants
 HOST = '0.0.0.0'
-PORT = 3333
+PORT = 8081
 
 # initialize flask application
 app = Flask(__name__)
