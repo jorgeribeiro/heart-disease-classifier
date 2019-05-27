@@ -20,8 +20,8 @@ def predict():
     clf = joblib.load('model.pkl')
     probabilities = clf.predict_proba(X)
 
-    return jsonify([{'name': 'Heart-disease', 'value': round(probabilities[0, 0] * 100, 2)},
-    				{'name': 'No Heart-disease', 'value': round(probabilities[0, 1] * 100, 2)}])
+    return jsonify([{'name': 'Doença de coração', 'value': round(probabilities[0, 0] * 100, 2)},
+    				{'name': 'Sem doença de coração', 'value': round(probabilities[0, 1] * 100, 2)}])
 
 if __name__ == '__main__':
 	# run web server

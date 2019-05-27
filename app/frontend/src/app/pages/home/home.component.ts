@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {IrisService} from "./iris.service";
+import {SymptomsService} from "./symptoms.service";
 import {
-    Iris,
+    Symptoms,
     ProbabilityPrediction,
-    SVCParameters,
-    SVCResult
+    LogisticRegressionResult
 } from "./types";
 
 @Component({
@@ -14,9 +13,8 @@ import {
 })
 export class HomeComponent implements OnInit {
 
-    public svcParameters: SVCParameters = new SVCParameters();
-    public svcResult: SVCResult;
-    public iris: Iris = new Iris();
+    public logisticRegressionResult: LogisticRegressionResult;
+    public symptoms: Symptoms = new Symptoms();
     public probabilityPredictions: ProbabilityPrediction[];
 
     // graph styling
@@ -25,19 +23,21 @@ export class HomeComponent implements OnInit {
     };
 
     constructor(private irisService: IrisService) {
+
     }
 
     ngOnInit() {
+        
     }
 
     public trainModel() {
-        this.irisService.trainModel(this.svcParameters).subscribe((svcResult) => {
-            this.svcResult = svcResult;
+        this.irisService.trainModel().subscribe((logisticRegressionResult) => {
+            this.logisticRegressionResult = logisticRegressionResult;
         });
     }
 
-    public predictIris() {
-        this.irisService.predictIris(this.iris).subscribe((probabilityPredictions) => {
+    public predictSymptoms() {
+        this.irisService.predictSymptoms(this.symptoms).subscribe((probabilityPredictions) => {
             this.probabilityPredictions = probabilityPredictions;
         });
     }

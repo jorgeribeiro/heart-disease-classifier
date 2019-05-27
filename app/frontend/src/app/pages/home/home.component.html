@@ -1,7 +1,7 @@
 <div fxLayoutAlign="center center" fxLayout="column">
-    <h1>Iris Model - Example</h1>
+    <h1>Protótipo - Classificador de Doença de Coração</h1>
 
-    <div class="home__training">
+    <!-- <div class="home__training">
         <h3>Train Classification Model (Support Vector Machine)</h3>
         <md-card fxLayoutAlign="center center" fxLayout="column">
             <h4>Set Parameter for Model Training</h4>
@@ -30,45 +30,67 @@
                 [units]="'% accuracy'">
             </ngx-charts-linear-gauge>
         </div>
-    </div>
+    </div> -->
 
     <div class="home__prediction"
          fxLayoutAlign="center center"
          fxLayout="column">
-        <h3>Predict Iris classes</h3>
+        <h3>Predição de probabilidade de Doença de Coração</h3>
 
         <md-card fxLayoutAlign="center center" fxLayout="column">
-            <h4>Define Iris</h4>
+            <h4>Defina os parâmetros</h4>
             <div fxLayout="row">
                 <md-input-container>
                     <input mdInput
-                           name="Sepal width"
-                           placeholder="Sepal width"
-                           [(ngModel)]="iris.sepalWidth">
+                           name="Dor no peito"
+                           placeholder="Dor no peito"
+                           [(ngModel)]="symptoms.cp">
                 </md-input-container>
                 <md-input-container>
                     <input mdInput
-                           name="Sepal length"
-                           placeholder="Sepal length"
-                           [(ngModel)]="iris.sepalLength">
+                           name="Nível máximo de batimento cardíaco"
+                           placeholder="Nível máximo de batimento cardíaco"
+                           [(ngModel)]="symptoms.thalach">
                 </md-input-container>
             </div>
             <div fxLayout="row">
                 <md-input-container>
                     <input mdInput
-                           name="Petal width"
-                           placeholder="Petal width"
-                           [(ngModel)]="iris.petalWidth">
+                           name="Número de vasos sanguíneos destacados por fluoroscopia"
+                           placeholder="Número de vasos sanguíneos destacados por fluoroscopia"
+                           [(ngModel)]="symptoms.ca">
                 </md-input-container>
                 <md-input-container>
                     <input mdInput
-                           name="Petal length"
-                           placeholder="Petal length"
-                           [(ngModel)]="iris.petalLength">
+                           name="Depressão do segmento ST"
+                           placeholder="Depressão do segmento ST"
+                           [(ngModel)]="symptoms.oldpeak">
+                </md-input-container>
+            </div>
+            <div fxLayout="row">
+                <md-input-container>
+                    <input mdInput
+                           name="Sexo (1 = homem, 0 = mulher)"
+                           placeholder="Sexo (1 = homem, 0 = mulher)"
+                           [(ngModel)]="symptoms.sex">
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput
+                           name="Pressão sanguínea"
+                           placeholder="Pressão sanguínea"
+                           [(ngModel)]="symptoms.trestbps">
+                </md-input-container>
+            </div>
+            <div fxLayout="row">
+                <md-input-container>
+                    <input mdInput
+                           name="Idade"
+                           placeholder="Idade"
+                           [(ngModel)]="symptoms.age">
                 </md-input-container>
             </div>
             <div>
-                <button md-raised-button (click)="predictIris()">Predict iris</button>
+                <button md-raised-button (click)="predictSymptoms()">Realizar predição</button>
             </div>
         </md-card>
 
@@ -76,7 +98,7 @@
              fxLayoutAlign="center center"
              fxLayout="column"
              class="home__chart-container">
-            <h4>Prediction Result</h4>
+            <h4>Resultado</h4>
             <ngx-charts-pie-chart
                 [results]="probabilityPredictions"
                 [scheme]="colorScheme"
