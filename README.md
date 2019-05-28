@@ -8,6 +8,9 @@ Classification of heart disease based on symptoms and personal features
 - Flask
 - Angular or React or Vue
 
+## Dataset
+[Dataset used](https://archive.ics.uci.edu/ml/datasets/Heart+Disease)
+
 ## Acknowledgment
 This project could not be built without the help of this [article from medium](https://medium.com/@dvelsner/deploying-a-simple-machine-learning-model-in-a-modern-web-application-flask-angular-docker-a657db075280).
 
