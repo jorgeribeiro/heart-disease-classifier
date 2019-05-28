@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
         domain: ['#1a242c', '#e81746', '#e67303', '#f0f0f0']
     };
 
-    constructor(private irisService: IrisService) {
+    constructor(private symptomsService: SymptomsService) {
 
     }
 
@@ -30,14 +30,14 @@ export class HomeComponent implements OnInit {
         
     }
 
-    public trainModel() {
-        this.irisService.trainModel().subscribe((logisticRegressionResult) => {
-            this.logisticRegressionResult = logisticRegressionResult;
-        });
-    }
+    // public trainModel() {
+    //     this.symptomsService.trainModel().subscribe((logisticRegressionResult) => {
+    //         this.logisticRegressionResult = logisticRegressionResult;
+    //     });
+    // }
 
     public predictSymptoms() {
-        this.irisService.predictSymptoms(this.symptoms).subscribe((probabilityPredictions) => {
+        this.symptomsService.predictSymptoms(this.symptoms).subscribe((probabilityPredictions) => {
             this.probabilityPredictions = probabilityPredictions;
         });
     }

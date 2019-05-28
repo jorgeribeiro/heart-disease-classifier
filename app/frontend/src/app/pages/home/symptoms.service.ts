@@ -16,9 +16,9 @@ export class SymptomsService {
     constructor(private http: Http) {
     }
 
-    public trainModel(): Observable<LogisticRegressionResult> {
-        return this.http.post(`${SERVER_URL}train`).map((res) => res.json());
-    }
+    // public trainModel(): Observable<LogisticRegressionResult> {
+    //     return this.http.post(`${SERVER_URL}train`).map((res) => res.json());
+    // }
 
     public predictSymptoms(symptoms: Symptoms): Observable<ProbabilityPrediction[]> {
         return this.http.post(`${SERVER_URL}predict`, symptoms).map((res) => res.json());

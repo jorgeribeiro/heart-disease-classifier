@@ -14,7 +14,13 @@ app = Flask(__name__)
 def predict():
     # get features object from request
     X = request.get_json()
-    X = [[float(X['cp'], float(X['thalach']), float(X['ca']), float(X['oldpeak']), float(X['sex']), float(X['trestbps']), float(X['age']))]]
+    X = [[float(X['age']), float(X['sex']), 
+        float(X['cp']), float(X['trestbps']), 
+        float(X['chol']), float(X['fbs']), 
+        float(X['restecg']), float(X['thalach']),
+        float(X['exang']), float(X['oldpeak']),
+        float(X['slope']), float(X['ca']),
+        float(X['thal'])]]
 
     # read model
     clf = joblib.load('model.pkl')
