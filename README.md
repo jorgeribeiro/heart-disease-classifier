@@ -6,7 +6,7 @@ Classification of heart disease based on symptoms and personal features
 - pandas
 - trying to build the model with TensorFlow (to deploy on Firebase, no success so far)
 - Flask
-- Angular or React or Vue
+- Angular
 
 ## Dataset
 [Dataset used](https://archive.ics.uci.edu/ml/datasets/Heart+Disease)
