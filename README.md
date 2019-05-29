@@ -21,3 +21,5 @@ This project could not be built without the help of this [article from medium](h
 
 It was my first time using Flask and its author made it simple to understand and integrate Flask with sklearn.
 He also provides a simple interface built with Angular.
+
+I also would like to thank [this article](http://lucdemortier.github.io/projects/3_mcnulty.html), that helped me understand the heart disease dataset better.
